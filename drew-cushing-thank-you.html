@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Drew Cushing</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #faf8f4;
+    --warm-white: #ffffff;
+    --ink: #1a1710;
+    --ink-light: #4a4740;
+    --ink-faint: #8a8780;
+    --gold: #b8936a;
+    --gold-light: #f5ede3;
+    --rule: #e2ded8;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 3rem;
+    background: rgba(250,248,244,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400; letter-spacing: 0.04em;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-logo em { font-style: italic; color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.78rem; font-weight: 400; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--ink-faint);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-size: 0.78rem !important; font-weight: 500 !important;
+    color: var(--warm-white) !important; background: var(--ink);
+    padding: 0.5rem 1.4rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold) !important; }
+
+  /* ── MAIN ── */
+  main {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    padding: 8rem 3rem 5rem;
+    position: relative; overflow: hidden;
+  }
+
+  main::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(to right, rgba(184,147,106,0.06) 0.5px, transparent 0.5px),
+      linear-gradient(to bottom, rgba(184,147,106,0.06) 0.5px, transparent 0.5px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  .content {
+    position: relative; z-index: 1;
+    max-width: 580px; margin: 0 auto; text-align: center;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Check mark */
+  .check-wrap {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 64px; height: 64px;
+    border: 1px solid rgba(184,147,106,0.4);
+    background: var(--gold-light);
+    margin-bottom: 2.5rem;
+    animation: popIn 0.5s 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .eyebrow {
+    font-size: 0.68rem; font-weight: 500; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.25rem; display: block;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300; line-height: 1.1;
+    letter-spacing: -0.01em; color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  h1 em { font-style: italic; color: var(--gold); }
+
+  .rule {
+    width: 40px; height: 1px; background: var(--gold);
+    margin: 1.5rem auto;
+  }
+
+  .sub {
+    font-size: 0.95rem; color: var(--ink-faint);
+    font-weight: 300; line-height: 1.9;
+    margin-bottom: 3rem;
+  }
+
+  /* Promise cards */
+  .promises {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-bottom: 2.5rem; text-align: left;
+  }
+
+  .promise-card {
+    background: var(--warm-white);
+    border: 1px solid var(--rule);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .promise-card:hover { border-color: var(--gold); }
+
+  .promise-icon {
+    width: 32px; height: 32px;
+    background: var(--gold-light);
+    border: 1px solid rgba(184,147,106,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .promise-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 400;
+    color: var(--ink); margin-bottom: 0.35rem;
+  }
+
+  .promise-card p {
+    font-size: 0.82rem; color: var(--ink-faint);
+    line-height: 1.7; font-weight: 300;
+  }
+
+  /* Actions */
+  .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-block; background: var(--ink); color: var(--warm-white);
+    font-family: 'Jost', sans-serif; font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.9rem 2rem; text-decoration: none; transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.85rem; color: var(--ink-faint);
+    text-decoration: none; transition: color 0.2s; letter-spacing: 0.05em;
+  }
+  .btn-ghost:hover { color: var(--ink); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    color: rgba(255,255,255,0.35); font-size: 0.78rem;
+  }
+  footer a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--gold); }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic; color: rgba(255,255,255,0.5);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    main { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .promises { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Drew Cushing <em>·</em> Author</a>
+  <div class="nav-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#book">Vassar Boy</a>
+    <a href="index.html#publications">Publications</a>
+    <a href="index.html#plays">Theater</a>
+    <a href="index.html#bentboy">Bent Boy Books</a>
+    <a href="index.html#contact" class="nav-cta">Contact</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main>
+  <div class="content">
+
+    <div class="check-wrap">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M5 12.5l4.5 4.5L19 7" stroke="#b8936a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <span class="eyebrow">Message received</span>
+    <h1>Thank you for<br>reaching <em>out.</em></h1>
+    <div class="rule"></div>
+    <p class="sub">I appreciate you taking the time to write. Here is what you can expect next.</p>
+
+    <div class="promises">
+      <div class="promise-card">
+        <div class="promise-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="5.5" stroke="#b8936a" stroke-width="1.2"/>
+            <path d="M7 4.5v3l1.5 1.5" stroke="#b8936a" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Response within one business day</h4>
+        <p>I read every message personally and will be in touch promptly.</p>
+      </div>
+      <div class="promise-card">
+        <div class="promise-icon">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <rect x="1.5" y="3" width="11" height="8" rx="1" stroke="#b8936a" stroke-width="1.2"/>
+            <path d="M1.5 5l5.5 3.5L12.5 5" stroke="#b8936a" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h4>Free 30-minute consultation</h4>
+        <p>For literary, press, or project inquiries — no commitment required.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="index.html" class="btn-primary">Back to home</a>
+      <a href="index.html#book" class="btn-ghost">Read about Vassar Boy →</a>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Drew Cushing</span>
+  <span>© 2026 Drew Cushing. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#book">Vassar Boy</a>
+    <a href="index.html#publications">Publications</a>
+    <a href="index.html#plays">Theater</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
