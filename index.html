@@ -98,6 +98,8 @@
     text-decoration: none; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--ink); }
+  .nav-group { display: flex; align-items: center; gap: 1rem; }
+  .nav-sub { font-size: 0.7rem !important; opacity: 0.65; letter-spacing: 0.1em; }
   .nav-cta {
     font-size: 0.78rem !important; font-weight: 500 !important;
     color: var(--warm-white) !important; background: var(--ink);
@@ -506,9 +508,11 @@
   <a href="#home" class="nav-logo">Drew Cushing <em>·</em> Author</a>
   <div class="nav-links">
     <a href="#about">About</a>
-    <a href="#book">Vassar Boy</a>
-    <a href="#about-book" style="font-size:0.72rem;padding-left:0.75rem;opacity:0.7;">— About</a>
-    <a href="#characters" style="font-size:0.72rem;padding-left:0.75rem;opacity:0.7;">— Characters</a>
+    <span class="nav-group">
+      <a href="#book">Vassar Boy</a>
+      <a href="#about-book" class="nav-sub">— About</a>
+      <a href="#characters" class="nav-sub">— Characters</a>
+    </span>
     <a href="#publications">Publications</a>
     <a href="#bentboy">Bent Boy Books</a>
     <a href="#contact" class="nav-cta">Contact</a>
@@ -738,7 +742,7 @@
         <div class="rule"></div>
         <p>BentBoyBooks publishes small books, single poems and other publications designed and produced by the BentBoys of San Francisco and Connecticut. BentBoyBooks bend genre, narrative and form to suit the particular and perfect taste of the BentBoyBooks editor and founder, Drew Cushing. BentBoyBooks are distributed in secret and mysterious ways to a select audience of glitterati, literati and denizens of the night (especially the night club).</p>
         <p>This tiny erratic effort at publishing and shameless self promotion is the child of Drew Cushing, an obscure San Francisco experimental writer whose writing combines his love of Sex, San Francisco, and language.</p>
-        <p>BentBoyBooks are built by Drew &amp; Ralph in their Alamo Square apartment and their Norfolk, Connecticut home. Visit us at <a href="http://www.bentboybooks.com" target="_blank" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,147,106,0.4);">bentboybooks.com</a>.</p>
+        <p>BentBoyBooks are built by Drew &amp; Ralph in their Alamo Square apartment and their Norfolk, Connecticut home. Visit us at <a href="https://www.bentboybooks.com" target="_blank" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,147,106,0.4);">bentboybooks.com</a>.</p>
       </div>
       <div class="bentboy-mark">
         Bent<br>
