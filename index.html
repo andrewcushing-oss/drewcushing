@@ -401,7 +401,7 @@
   .bentboy-mark {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(4rem, 8vw, 7rem); font-weight: 300; font-style: italic;
-    color: rgba(255,255,255,0.06); line-height: 1;
+    color: rgba(255,255,255,0.06); line-height: 0.95;
     text-align: right; user-select: none;
   }
   .bentboy-mark strong {
@@ -506,6 +506,7 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
+    .bentboy-mark { display: none; }
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
     .hero { padding: 7rem 1.5rem 4rem; }
@@ -764,11 +765,7 @@
         <p>This tiny erratic effort at publishing and shameless self promotion is the child of Drew Cushing, an obscure San Francisco experimental writer whose writing combines his love of Sex, San Francisco, and language.</p>
         <p>BentBoyBooks are built by Drew &amp; Ralph in their Alamo Square apartment and their Norfolk, Connecticut home. Visit us at <a href="https://www.bentboybooks.com" target="_blank" style="color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,147,106,0.4);">bentboybooks.com</a>.</p>
       </div>
-      <div class="bentboy-mark">
-        Bent<br>
-        <strong>Boy</strong><br>
-        Books
-      </div>
+      <div class="bentboy-mark" aria-hidden="true">Bent<strong>Boy</strong>Books</div>
     </div>
   </div>
 </section>
